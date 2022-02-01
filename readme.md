@@ -5,7 +5,7 @@
 - Staging Site (⏳)
 
 ##### Project Management
-- [Backlog](https://trello.com/b/053PXYG4/crypto-dashboard)
+- [Full Backlog](https://trello.com/b/053PXYG4/crypto-dashboard)
 
 ---
 
