@@ -1,0 +1,13 @@
+<input type="button" value="Back" onClick="javascript:history.go(-1);">
+
+{% if cryptos %}
+    <ul>
+    {% for crypto in cryptos %}
+        <li>
+            <a href="{% url 'cryptos:get_single_crypto' crypto.ticker %}">{{ crypto.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no cryptos yet!</p>
+{% endif %}
