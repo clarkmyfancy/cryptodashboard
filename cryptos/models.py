@@ -6,3 +6,6 @@ class Favorite(models.Model):
 
     def __str__(self):
         return self.ticker
+
+    def fake_function(self, a, b):
+        return a + b
