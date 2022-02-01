@@ -1,12 +1,11 @@
-### Useful Links
+### Useful Resources
 
-Production Site 
-  - https://cryptowebappdashboard.herokuapp.com
+##### Site links
+- [Production Site](https://cryptowebappdashboard.herokuapp.com)
+- Staging Site (⏳)
 
-Staging Site (⏳)
-
-Project Backlog
-  - https://trello.com/b/053PXYG4/crypto-dashboard
+##### Project Management
+- [Backlog](https://trello.com/b/053PXYG4/crypto-dashboard)
 
 ---
 
