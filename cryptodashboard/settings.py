@@ -62,7 +62,9 @@ ROOT_URLCONF = 'cryptodashboard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'cryptodashboard/templates/shared')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

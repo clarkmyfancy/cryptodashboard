@@ -1,0 +1,12 @@
+.title_container {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.dashboard_title {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid red;
+    margin: 0 auto;
+}
