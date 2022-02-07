@@ -1,5 +1,8 @@
-<h2>Welcome to the dashboard</h2>
+{% extends "base.html" %}
 
+
+{% block body %}
 <a href="{% url 'cryptos:index' %}">
     <button type="button">Cryptos</button>
 </a>
+{% endblock body %}

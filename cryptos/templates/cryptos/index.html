@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+
+{% block body %}
 <input type="button" value="Back" onClick="javascript:history.go(-1);">
 
 {% if cryptos %}
@@ -11,3 +15,6 @@
 {% else %}
     <p>There are no cryptos yet!</p>
 {% endif %}
+
+
+{% endblock body %}
