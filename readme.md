@@ -2,7 +2,7 @@
 
 ##### Site links
 - [Production Site](https://cryptowebappdashboard.herokuapp.com)
-- Staging Site (⏳)
+- [Staging Site](https://cryptodashboard-staging.herokuapp.com)
 
 ##### Project Management
 - [Full Backlog](https://trello.com/b/053PXYG4/crypto-dashboard)
