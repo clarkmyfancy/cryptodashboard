@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('CRYPTOWEBAPIDASHBOARD_SECRET_KEY')
 DEBUG = (os.environ.get('CRYPTOWEBAPIDASHBOARD_DEBUG_VALUE') == "True")
 
 ALLOWED_HOSTS = [
-    'cryptowebappdashboard.herokuapp.com'
+    'cryptowebappdashboard.herokuapp.com',
+    'cryptodashboard-staging.herokuapp.com'
 ]
 
 
