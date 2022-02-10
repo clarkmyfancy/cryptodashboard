@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.views.generic import DetailView, ListView
 
 from .models import Favorite
@@ -10,6 +10,18 @@ from .models import Favorite
 #         'cryptos': cryptos
 #     }
 #     return render(request, 'cryptos/index.html', context)
+
+def add_favorite(request):
+    ticker = request.POST['ticker']
+    name = request.POST['name']
+    new_fav = Favorite(name=name, ticker=ticker)
+    new_fav.save()
+
+    cryptos = Favorite.objects.all()
+    context = {
+        'cryptos': cryptos
+    }
+    return render(request, 'cryptos/index.html', context)
 
 class IndexView(ListView):
     template_name = 'cryptos/index.html'
@@ -25,3 +37,5 @@ class DetailView(DetailView):
     def get_object(self):
         thing = get_object_or_404(Favorite, ticker__exact=self.kwargs['ticker'])
         return thing
+
+

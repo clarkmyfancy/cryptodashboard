@@ -1,0 +1,17 @@
+.navbar {
+    background-color: black;
+    border-radius: 5px;
+}
+
+.title_container {
+    display: flex;
+}
+
+.dashboard_title {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 5px;
+    margin: 0 auto;
+    color: white;
+    align-self: flex-start;
+}
