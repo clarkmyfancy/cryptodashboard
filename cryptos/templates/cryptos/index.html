@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-
-
 {% block body %}
+
 <input type="button" value="Back" onClick="javascript:history.go(-1);">
 
 {% if cryptos %}
@@ -16,5 +15,17 @@
     <p>There are no cryptos yet!</p>
 {% endif %}
 
+<form action="{% url 'cryptos:add_favorite' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Add to favorites</h1></legend>
+        <label for="ticker">Ticker</label>
+        <input type="text" name="ticker">
+
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </fieldset>
+    <input type="submit" value="Favorite">
+</form>
 
 {% endblock body %}
