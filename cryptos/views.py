@@ -4,18 +4,23 @@ from django.views.generic import DetailView, ListView
 
 from .models import Favorite
 
-# def index(request):
-#     cryptos = Favorite.objects.all()
-#     context = {
-#         'cryptos': cryptos
-#     }
-#     return render(request, 'cryptos/index.html', context)
+def remove_from_watchlist(request):
+    name = request.GET['name']
+    if name:
+        thing = Favorite.objects.get(name=name)
+        thing.delete()
+    cryptos = Favorite.objects.all()
+    context = {
+        'cryptos': cryptos
+    }
+    return render(request, 'cryptos/index.html', context)
 
 def add_favorite(request):
     ticker = request.POST['ticker']
     name = request.POST['name']
-    new_fav = Favorite(name=name, ticker=ticker)
-    new_fav.save()
+    if ticker and name:
+        new_fav = Favorite(name=name, ticker=ticker)
+        new_fav.save()
 
     cryptos = Favorite.objects.all()
     context = {
