@@ -25,7 +25,16 @@
         <label for="name">Name</label>
         <input type="text" name="name">
     </fieldset>
-    <input type="submit" value="Favorite">
+    <input type="submit" value="Add Favorite">
+</form>
+
+<form action="{% url 'cryptos:remove_from_watchlist' %}" method="delete">
+    <fieldset>
+        <legend><h1>Remove from favorites</h1></legend>
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </fieldset>
+    <input type="submit" value="Remove Favorite">
 </form>
 
 {% endblock body %}
