@@ -1,0 +1,46 @@
+.navbar {
+    background-color: black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.site_title_wrapper {
+    display: flex;
+}
+
+.dashboard_title {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 5px;
+    margin: 0 auto;
+    color: white;
+    align-self: flex-start;
+}
+
+.navbar_links_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar_link_item {
+    padding: 2px 2px;
+    margin: 2px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.navbar_link_item button {
+    font-size: medium;
+}
+
+.navbar_link_item > a :hover {
+    cursor: pointer;
+}
+
+.watchlist_button :hover {
+    cursor: pointer;
+}

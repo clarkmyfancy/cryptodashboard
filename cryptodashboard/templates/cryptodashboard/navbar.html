@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'cryptodashboard/navbar.css' %}">
+
+<div class="navbar">
+    <div class="site_title_wrapper">
+        <div class="dashboard_title">CryptoDashboard</div>
+    </div>
+
+
+    <div class="navbar_links_wrapper">
+
+        <div class="navbar_link_item">
+            <a class="watchlist_button_wrapper" href="{% url 'watchlist:index' %}">
+                <button type="button">Watchlist</button>
+            </a>
+        </div>   
+
+        <div class="navbar_link_item">
+            <a class="user_auth_button_wrapper" href="">
+                <button type="button">Login</button>
+            </a>
+        </div>  
+
+    </div>     
+
+</div>
