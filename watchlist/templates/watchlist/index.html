@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'watchlist/index.css' %}">
+
+<div class="favorites_list_wrapper">
+    {% if cryptos %}
+        {% for crypto in cryptos %}
+            {% include 'watchlist/watchlist_line_item.html' %}
+        {% endfor %}
+    {% else %}
+        <p>There are no cryptos yet!</p>
+    {% endif %}
+    
+</div>
+
+
+
+<form action="{% url 'cryptos:add_favorite' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Add to favorites</h1></legend>
+        <label for="ticker">Ticker</label>
+        <input type="text" name="ticker">
+
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </fieldset>
+    <input type="submit" value="Add Favorite">
+</form>
+
+<form action="{% url 'cryptos:remove_from_watchlist' %}" method="delete">
+    <fieldset>
+        <legend><h1>Remove from favorites</h1></legend>
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </fieldset>
+    <input type="submit" value="Remove Favorite">
+</form>
+
+{% endblock body %}

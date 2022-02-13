@@ -1,0 +1,7 @@
+.favorites_list_wrapper {
+    margin: 20px;
+    /* border: 2px solid darkblue; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px #aaa;
+    display: block;
+}
