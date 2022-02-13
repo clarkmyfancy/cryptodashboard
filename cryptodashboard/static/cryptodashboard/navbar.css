@@ -19,6 +19,16 @@
     align-self: flex-start;
 }
 
+.homepage_link {
+    color: white;
+    text-decoration: none;
+}
+
+.homepage_link :visited{
+    color: white;
+    text-decoration: none;
+}
+
 .navbar_links_wrapper {
     display: flex;
     flex-direction: row;
