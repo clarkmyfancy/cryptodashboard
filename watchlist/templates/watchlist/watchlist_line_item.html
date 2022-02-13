@@ -1,0 +1,7 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'watchlist/watchlist_line_item.css' %}">
+
+<div class="watchlist_line_item_wrapper">
+    <a href="{% url 'cryptos:get_single_crypto' crypto.ticker %}">{{ crypto.name }}</a>
+    <button class="delete_button" type="button">X</button>
+</div>

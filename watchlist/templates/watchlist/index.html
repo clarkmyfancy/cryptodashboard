@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'watchlist/index.css' %}">
 
-<input type="button" value="Back" onClick="javascript:history.go(-1);">
+<div class="favorites_list_wrapper">
+    {% if cryptos %}
+        {% for crypto in cryptos %}
+            {% include 'watchlist/watchlist_line_item.html' %}
+        {% endfor %}
+    {% else %}
+        <p>There are no cryptos yet!</p>
+    {% endif %}
+    
+</div>
 
-{% if cryptos %}
-    <ul>
-    {% for crypto in cryptos %}
-        <li>
-            <a href="{% url 'cryptos:get_single_crypto' crypto.ticker %}">{{ crypto.name }}</a>
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>There are no cryptos yet!</p>
-{% endif %}
+
 
 <form action="{% url 'cryptos:add_favorite' %}" method="post">
     {% csrf_token %}
