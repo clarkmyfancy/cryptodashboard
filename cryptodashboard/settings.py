@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'watchlist.apps.WatchlistConfig',
     'cryptos.apps.CryptosConfig',
     'dashboard.apps.DashboardConfig',
     'django.contrib.admin',
