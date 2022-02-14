@@ -26,6 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-8rcjo-bf)zaps_201ie*m5^)g2q4doulf7_duz+)txu241x_)^'
 SECRET_KEY = os.environ.get('CRYPTOWEBAPIDASHBOARD_SECRET_KEY')
 
+# API Keys
+
+# CoinMarketCap API Key
+COINMARKETCAP_API_KEY = os.environ.get('CoinMarketCap_API_Key')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('CRYPTOWEBAPIDASHBOARD_DEBUG_VALUE') == "True")
 
@@ -38,6 +43,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'coinmarketcap_api.apps.CoinmarketcapApiConfig',
     'watchlist.apps.WatchlistConfig',
     'cryptos.apps.CryptosConfig',
     'dashboard.apps.DashboardConfig',
