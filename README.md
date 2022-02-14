@@ -19,5 +19,6 @@
 ###### You will have to set the environment variables:
 - CRYPTOWEBAPIDASHBOARD_SECRET_KEY
 - CRYPTOWEBAPIDASHBOARD_DEBUG_VALUE
+- CoinMarketCap_API_Key
 
 

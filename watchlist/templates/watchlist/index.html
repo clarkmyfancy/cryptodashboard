@@ -3,6 +3,10 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'watchlist/index.css' %}">
 
+<a href="{% url "watchlist:load_prices" %}">
+    <button type="button">Load Prices</button>
+</a>
+
 <div class="favorites_list_wrapper">
     {% if cryptos %}
         {% for crypto in cryptos %}
