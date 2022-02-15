@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'watchlist'
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('load-prices/', views.do_thing, name='load_prices')
+    path('', views.render_favorites, name='index'),
+    path('add-favorite/', views.add_favorite, name="add_favorite"),
+    path('remove-favorite/<str:name>/', views.remove_favorite, name='remove_favorite')
 ]
