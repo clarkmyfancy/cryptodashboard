@@ -12,7 +12,7 @@ class IndexView(ListView):
     def get_queryset(self):
         return Favorite.objects.all()
 
-def do_thing(request):
+def render_favorites(request):
     tickers = Favorite.objects.all()
     ticker_list = list(tickers)
     ticker_list_string = ""
@@ -36,3 +36,20 @@ def do_thing(request):
         'thing': dict
     }
     return render(request, 'watchlist/index.html', context)
+
+def add_favorite(request):
+    ticker = request.POST['ticker']
+    name = request.POST['name']
+    if ticker and name:
+        new_fav = Favorite(name=name, ticker=ticker)
+        new_fav.save()
+
+    return render_favorites(request)
+
+def remove_favorite(request, name):
+    if name:
+        thing = Favorite.objects.get(name=name)
+        thing.delete()
+    return render_favorites(request)
+
+
