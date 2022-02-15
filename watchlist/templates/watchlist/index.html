@@ -3,24 +3,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'watchlist/index.css' %}">
 
-<a href="{% url "watchlist:load_prices" %}">
-    <button type="button">Load Prices</button>
-</a>
-
-<div class="favorites_list_wrapper">
-    {% if cryptos %}
-        {% for crypto in cryptos %}
-            {% include 'watchlist/watchlist_line_item.html' %}
-        {% endfor %}
-    {% else %}
-        <p>There are no cryptos yet!</p>
-    {% endif %}
-    
-</div>
-
-
-
-<form action="{% url 'cryptos:add_favorite' %}" method="post">
+<form action="{% url 'watchlist:add_favorite' %}" method="post">
     {% csrf_token %}
     <fieldset>
         <legend><h1>Add to favorites</h1></legend>
@@ -33,13 +16,17 @@
     <input type="submit" value="Add Favorite">
 </form>
 
-<form action="{% url 'cryptos:remove_from_watchlist' %}" method="delete">
-    <fieldset>
-        <legend><h1>Remove from favorites</h1></legend>
-        <label for="name">Name</label>
-        <input type="text" name="name">
-    </fieldset>
-    <input type="submit" value="Remove Favorite">
-</form>
+<div class="favorites_list_wrapper">
+    {% if cryptos %}
+        {% for crypto in cryptos %}
+            <div class="thing_djs">
+            {% include 'watchlist/watchlist_line_item.html' %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>There are no cryptos yet!</p>
+    {% endif %}
+    
+</div>
 
 {% endblock body %}
