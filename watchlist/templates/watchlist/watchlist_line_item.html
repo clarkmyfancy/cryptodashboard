@@ -4,7 +4,15 @@
 {% load watchlist_extras %}
 
 <div class="watchlist_line_item_wrapper">
-    <a href="{% url 'cryptos:get_single_crypto' crypto.ticker %}">{{ crypto.name }}</a>
-    <p>{{ thing | get_item:crypto.ticker }}</p>
-    <button class="delete_button" type="button">X</button>
+    <div class="watchlist_line_item crypto_name">
+        <a href="{% url 'cryptos:get_single_crypto' crypto.ticker %}">{{ crypto.name }}</a>
+    </div>
+    
+    <div class="watchlist_line_item">
+        <p>{{ thing | format_like_currency:crypto.ticker }}</p>
+    </div>
+
+    <div class="watchlist_line_item">
+        <button class="delete_button" onclick="location.href='{% url 'watchlist:remove_favorite' crypto.name %}'">X</button>
+    </div>
 </div>
